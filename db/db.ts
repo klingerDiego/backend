@@ -1,9 +1,9 @@
-import { connect } from "mongoose"
-// const {connect} = require("mongoose")
+import { connect } from "mongoose";
+// const {connect} = require("mongoose");
 
 const conectarBD = async () => {
 
-    return await connect("mongodb+srv://diegoKlinger:<password>@misproyectos.k0txb.mongodb.net/myFirstDatabase?retryWrites=true&w=majority")
+    return await connect("mongodb+srv://diegoKlinger:geri0916@misproyectos.k0txb.mongodb.net/GestionProyectos?retryWrites=true&w=majority")
     .then(() => {
         console.log("conexion exitosa")
     }).catch((e) => {
