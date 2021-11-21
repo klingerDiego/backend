@@ -13,3 +13,5 @@ const conectarBD = async () => {
 
 export default conectarBD;
 
+//aca me estoy conectando a la base de datos, es decir, mongodb
+

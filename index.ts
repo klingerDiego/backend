@@ -6,13 +6,13 @@ import {Enum_Rol}from  "./models/enums";
 const main = async ()=> {
     await conectarBD();
 
-    //crear un usuario
+    //CREAR UN USUARIO
     await userModel.create({
         correo:"klingerdiaz@gmail.com",
-        indentificacion:"10024617878",
+        indentificacion:"100246178798",
         nombre:"Deigo",
         apellido:"Klinger",
-        rol:Enum_Rol.Administrador,
+        rol:Enum_Rol.Estudiante,
     
     })
 
@@ -23,7 +23,7 @@ const main = async ()=> {
     })
 
 
-    //obtener los usuarios 
+    //OBTENER TODOS LOS USUARIOS
    /*  await userModel.find()
     .then((u)=>{
         console.log("usuarios",u);
@@ -33,3 +33,6 @@ const main = async ()=> {
     */
    };
 main ();
+
+
+//aca tengo parte del CRUD

@@ -41,4 +41,6 @@ const userModel = model("user", userSchema);
 
 export {userModel}; 
 
-//"user" úede ser una palabra cualquiera, es el nombre del modelo que va a llamar las funciones de mongoos
+//"user" puede ser una palabra cualquiera, es el nombre del modelo que va a llamar las funciones de mongoos
+
+//en este archivo estoy creando los documentos(correo,nombre...) de la coleccion users
