@@ -1,6 +1,6 @@
 import {Schema, model } from "mongoose";
 import { projectModel } from "./Projects";
-import {userModel} from "./user"
+import {UserModel} from "./user"
 
 
 interface Avance{
@@ -33,7 +33,7 @@ const advance = new Schema<Avance> ({
         }],
         creador:{
             type:Schema.Types.ObjectId,
-            ref:userModel,
+            ref:UserModel,
             required:true,
         },
 

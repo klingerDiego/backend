@@ -4,7 +4,7 @@ import { Enum_EstadoUsuaroi, Enum_Rol } from "./enums"
 
 interface User {
     correo: string;
-    indentificacion: string;
+    identificacion: string;
     nombre: string;
     apellido: string;
     rol: Enum_Rol;
@@ -34,11 +34,11 @@ const userSchema = new Schema<User>({
         },
         
     },
-    indentificacion: {
+    identificacion: {
         type: String,
         required: true,
         unique: true,
-    },
+      },
     nombre: {
         type: String,
         required: true,
@@ -56,14 +56,14 @@ const userSchema = new Schema<User>({
         type: String,
         required: true,
         enum: Enum_EstadoUsuaroi,
-        default: Enum_EstadoUsuaroi.Pendiente,
+        default: Enum_EstadoUsuaroi.PENDIENTE,
     },
 
 });
 
-const userModel = model("user", userSchema);
+const UserModel = model("user", userSchema);
 
-export { userModel };
+export { UserModel };
 
 //"user" puede ser una palabra cualquiera, es el nombre del modelo que va a llamar las funciones de mongoos
 

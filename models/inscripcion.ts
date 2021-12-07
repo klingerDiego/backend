@@ -1,6 +1,6 @@
 import {Schema, model } from "mongoose";
 import { projectModel } from "./Projects";
-import {userModel} from "./user"
+import {UserModel} from "./user"
 import { Enum_EstadoInscripcion, Enum_EstadoProyecto, Enum_EstadoUsuaroi, Enum_FaseProyecto, Enum_TipoObjetivo } from "./enums";
 
 
@@ -22,7 +22,7 @@ const inscripcionSchema = new Schema<Inscripcion> ({
     },
     estudiante:{
         type:Schema.Types.ObjectId, 
-            ref:userModel,
+            ref:UserModel,
             required:true,
     },
     estado:{
