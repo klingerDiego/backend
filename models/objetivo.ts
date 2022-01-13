@@ -1,6 +1,6 @@
 import {Schema, model} from "mongoose";
-import { Enum_EstadoProyecto, Enum_TipoObjetivo } from "./enums";
-import { projectModel } from "./Projects";
+import { Enum_EstadoProyecto, Enum_TipoObjetivo } from "./enums/enum";
+import { projectModel } from "./proyecto/proyecto";
 
 interface objective{
     descripcion: string,

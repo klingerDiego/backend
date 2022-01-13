@@ -1,10 +1,10 @@
 import conectarBD from "./db/db"
-import {UserModel} from "./models/user"
-import {Enum_EstadoUsuaroi, Enum_FaseProyecto, Enum_Rol, Enum_TipoObjetivo}from  "./models/enums";
-import { projectModel } from "./models/Projects";
+import {UserModel} from "./models/usuario/usuario"
+import {Enum_EstadoUsuaroi, Enum_FaseProyecto, Enum_Rol, Enum_TipoObjetivo}from  "./models/enums/enum";
+import { projectModel } from "./models/proyecto/proyecto";
 import { ObjetiveModel } from "./models/objetivo";
-import { inscripcionModel } from "./models/inscripcion";
-import { advanceModel } from "./models/avances";
+import { inscripcionModel } from "./models/inscripcion/inscripcion";
+import { advanceModel } from "./models/avances/avance";
 
 //metodologia one to many #1
 const crearProyectpsConObjetivos = async () => {
@@ -31,7 +31,7 @@ const nuevoProyecto = await projectModel.create({
 const objectgeneral = await ObjetiveModel.create ({
 
         descripcion:"este es el primer obgetivo general",
-        tipo:Enum_TipoObjetivo.General,
+        tipo:Enum_TipoObjetivo.GENERAL,
         proyecto:nuevoProyecto._id,    
 
 })
@@ -39,7 +39,7 @@ const objectgeneral = await ObjetiveModel.create ({
 const objectSpesifico1 = await ObjetiveModel.create ({
 
         descripcion:"este es el primer obgetivo espesifico",
-        tipo:Enum_TipoObjetivo.Espesifico,
+        tipo:Enum_TipoObjetivo.ESPESIFICO,
         proyecto:nuevoProyecto._id,    
 
 })
@@ -47,7 +47,7 @@ const objectSpesifico1 = await ObjetiveModel.create ({
 const objectSpesifico2 = await ObjetiveModel.create ({
 
         descripcion:"este es el segundo obgetivo espesifico",
-        tipo:Enum_TipoObjetivo.Espesifico,
+        tipo:Enum_TipoObjetivo.ESPESIFICO,
         proyecto:nuevoProyecto._id,    
 
 })
@@ -91,9 +91,9 @@ const nuevoProyecto = await projectModel.create({
     fechaFin: new Date("2022/09/16"),
     lider:nuevoUsuaroi._id,
     objetivos:[
-        {descripcion:"objetivo general aqui",tipo: Enum_TipoObjetivo.General},
-        {descripcion:"objetivo espesifico 1 aqui",tipo: Enum_TipoObjetivo.Espesifico},
-        {descripcion:"objetivo espesifico 2 aqui",tipo: Enum_TipoObjetivo.Espesifico}
+        {descripcion:"objetivo general aqui",tipo: Enum_TipoObjetivo.GENERAL},
+        {descripcion:"objetivo espesifico 1 aqui",tipo: Enum_TipoObjetivo.ESPESIFICO},
+        {descripcion:"objetivo espesifico 2 aqui",tipo: Enum_TipoObjetivo.ESPESIFICO}
     ],
 
 })
@@ -126,9 +126,9 @@ const main = async () => {
             fechaFin: new Date("2022/09/16"),
             lider: nuevoUsuaroi._id,
             objetivos:[
-                {descripcion:"objetivo general aqui",tipo: Enum_TipoObjetivo.General},
-                {descripcion:"objetivo espesifico 1 aqui",tipo: Enum_TipoObjetivo.Espesifico},
-                {descripcion:"objetivo espesifico 2 aqui",tipo: Enum_TipoObjetivo.Espesifico}
+                {descripcion:"objetivo general aqui",tipo: Enum_TipoObjetivo.GENERAL},
+                {descripcion:"objetivo espesifico 1 aqui",tipo: Enum_TipoObjetivo.ESPESIFICO},
+                {descripcion:"objetivo espesifico 2 aqui",tipo: Enum_TipoObjetivo.ESPESIFICO}
             ],
 
         })

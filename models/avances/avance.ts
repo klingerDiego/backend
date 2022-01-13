@@ -1,6 +1,6 @@
 import {Schema, model } from "mongoose";
-import { projectModel } from "./Projects";
-import {UserModel} from "./user"
+import { projectModel } from "../proyecto/proyecto";
+import {UserModel} from "../usuario/usuario"
 
 
 interface Avance{
@@ -39,6 +39,6 @@ const advance = new Schema<Avance> ({
 
 })
 
-const advanceModel = model("Avance",advance,);
+const modeloAvance = model("Avance",advance,);
 
-export {advanceModel};
+export {modeloAvance};
