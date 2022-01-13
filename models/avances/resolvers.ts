@@ -9,6 +9,13 @@ const resolverAvance ={
             .populate("creador");  
             return avances;   
         },
+
+        filtrarAvance:async (parents,args) => {
+            const avanceFiltrado = await modeloAvance.find({proyecto:args.idProyecto})
+            .populate("proyecto")
+            .populate("creador")
+            return avanceFiltrado;
+        },
     },
 
     Mutation:{
@@ -19,8 +26,9 @@ const resolverAvance ={
                 proyecto: args.proyecto,
                 creador: args.creador,
             })
-            return avanceCreado;     
+            return avanceCreado;  
         },
+
     },
 };
 export {resolverAvance};
