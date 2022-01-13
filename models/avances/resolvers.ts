@@ -4,7 +4,9 @@ const resolverAvance ={
     Query:{
 
         Avances: async (parent, args) => {
-            const avances = await modeloAvance.find();  
+            const avances = await modeloAvance.find()
+            .populate("proyecto")
+            .populate("creador");  
             return avances;   
         },
     },
@@ -16,7 +18,7 @@ const resolverAvance ={
                 descripcion: args.descripcion,
                 proyecto: args.proyecto,
                 creador: args.creador,
-            });
+            })
             return avanceCreado;     
         },
     },
