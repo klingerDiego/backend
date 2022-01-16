@@ -1,9 +1,10 @@
-import {Schema, model } from "mongoose";
-import { projectModel } from "../proyecto/proyecto";
-import {UserModel} from "../usuario/usuario"
+import mongoose from "mongoose";
+import { projectModel } from "../proyecto/proyecto.js";
+import {UserModel} from "../usuario/usuario.js"
 
+const {Schema, model}=mongoose;
 
-interface Avance{
+/* interface Avance{
 
     proyecto: Schema.Types.ObjectId,
     fecha: Date,
@@ -11,9 +12,9 @@ interface Avance{
     observaciones:[string],
     creador:Schema.Types.ObjectId,
 
-}
+} */
 
-const advance = new Schema<Avance> ({
+const advance = new Schema ({
 
         proyecto:{
             type:Schema.Types.ObjectId,
@@ -38,7 +39,7 @@ const advance = new Schema<Avance> ({
         },
 
 })
-
+;
 const modeloAvance = model("Avance",advance,);
 
 export {modeloAvance};

@@ -26,6 +26,8 @@ scalar Date
         fase:Enum_FaseProyecto!
         lider: Usuario!
         objetivos: [Objetivo]
+        avances:[Avance]
+        inscripciones:[Inscripcion]
     }
 
     type Query{
@@ -44,6 +46,10 @@ scalar Date
         lider: String!
         objetivos:[crearObjetivo!]
         ):Proyecto
+
+        aprobarInscripcion(
+            id:String!
+        ):Inscripcion 
     }
 
     `

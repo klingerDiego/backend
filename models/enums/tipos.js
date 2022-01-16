@@ -30,6 +30,12 @@ enum Enum_TipoObjetivo{
     GENERAL
     ESPESIFICO
 } 
+
+enum Enum_EstadoInscripcion{
+    ACEPTADA
+    RECHAZADA 
+    PENDIENTE
+}
     `
 ;
 

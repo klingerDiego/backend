@@ -1,4 +1,4 @@
-import { projectModel } from "./proyecto";
+import { projectModel } from "./proyecto.js";
 
 
 
@@ -8,8 +8,12 @@ const resolversProyecto = {
 
         Proyectos: async (parent,args) => {
 
-            const proyecto = await projectModel.find({}).populate("lider");
-            return proyecto;
+            const proyecto = await projectModel.find()
+            .populate("lider")
+            .populate("avances")
+            .populate("inscripciones")
+            ;
+            return proyecto; 
             
         }
     
@@ -28,7 +32,9 @@ const resolversProyecto = {
                 objetivos:args.objetivos,
             })
             return proyectoCreado;           
-        }   
+        },
+        
+        
      },
 
         

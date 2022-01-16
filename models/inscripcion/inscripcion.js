@@ -1,19 +1,20 @@
-import {Schema, model } from "mongoose";
-import { projectModel } from "../proyecto/proyecto";
-import {UserModel} from "../usuario/usuario"
-import { Enum_EstadoInscripcion, Enum_EstadoProyecto, Enum_EstadoUsuaroi, Enum_FaseProyecto, Enum_TipoObjetivo } from "../enums/enum";
+import mongoose from "mongoose";
+import { projectModel } from "../proyecto/proyecto.js";
+import {UserModel} from "../usuario/usuario.js"
+/* import { Enum_EstadoInscripcion, Enum_EstadoProyecto, Enum_EstadoUsuaroi, Enum_FaseProyecto, Enum_TipoObjetivo } from "../enums/enum";
+ */
+const {Schema, model}=mongoose;
 
-
-interface Inscripcion {
+/* interface Inscripcion {
 
     proyecto: Schema.Types.ObjectId,
     estudiante:Schema.Types.ObjectId,
     estado:Enum_EstadoInscripcion,
     fechaingreso:Date,
     fechaegreso:Date,
-}
+} */
 
-const inscripcionSchema = new Schema<Inscripcion> ({
+const inscripcionSchema = new Schema ({
 
     proyecto:{
         type:Schema.Types.ObjectId,
@@ -26,17 +27,18 @@ const inscripcionSchema = new Schema<Inscripcion> ({
             required:true,
     },
     estado:{
-        enum:Enum_EstadoInscripcion,
-        default:Enum_EstadoInscripcion.rechazada,
+        enum:["RECHAZADA","ACEPTADA","PENDIENTE"],
+        default:"PENDIENTE",
         type:String,
-    },
-    fechaingreso:{
-        type:Date,
         required:true,
     },
-    fechaegreso:{
+    fechaEgreso:{
         type:Date,
-        required:true,
+        required:false,
+    },
+    fechaIngreso:{
+        type:Date,
+        required:false,
     }
 
 });

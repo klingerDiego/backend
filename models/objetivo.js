@@ -1,14 +1,14 @@
 import {Schema, model} from "mongoose";
-import { Enum_EstadoProyecto, Enum_TipoObjetivo } from "./enums/enum";
+/* import { Enum_EstadoProyecto, Enum_TipoObjetivo } from "./enums/enum"; */
 import { projectModel } from "./proyecto/proyecto";
 
-interface objective{
+/* interface objective{
     descripcion: string,
     tipo: Enum_TipoObjetivo,
-    /* proyecto: Schema.Types.ObjectId; */
-}
+    // proyecto: Schema.Types.ObjectId; 
+} */
 
-const objectiveSchema =new Schema<objective>({
+const objectiveSchema =new Schema({
 
     descripcion:{
         type:String,
@@ -16,7 +16,7 @@ const objectiveSchema =new Schema<objective>({
     },
     tipo:{
         type:String,
-        enum:Enum_TipoObjetivo,
+        enum:["GENERAL","ESPESIFICO"],
         required:true,
     },
     /* proyecto:{
