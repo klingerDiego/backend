@@ -25,7 +25,7 @@ const resolverInscripciones={
                 estado:"ACEPTADA",
                 fechaIngreso:Date.now()
 
-            });
+            },{new:true});
             return InscripcionApro;
 
         }
